@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
+import { Button } from 'semantic-ui-react'
 
 import Footer from './components/Footer.jsx'
 import ImageList from './components/ImageList.jsx'
@@ -54,6 +55,7 @@ class App extends React.Component {
         <h2>최첨단 기술을 잉여롭게 써보자</h2>
         <ImageList />
         <Footer />
+        <button id="result-btn">나의 연기는 몇점?</button>
       </div>
     )
   }

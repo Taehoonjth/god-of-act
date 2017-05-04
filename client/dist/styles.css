@@ -1,7 +1,7 @@
 /*html {
     overflow-y: scroll;
 }*/
-* {
+*, *:before, *:after {
     box-sizing: border-box;
 }
 
@@ -18,4 +18,32 @@ footer {
 
 .footer-inner {
     padding: 0 1rem;
+}
+
+/*.ui.grid>.row>.column {
+    padding-left: 0rem !important;
+    padding-right: 0rem !important;
+}*/
+
+#result-btn {
+    display: block;
+    background: #ff3f55;
+    border-radius: 30px;
+    bottom: 26px;
+    box-shadow: 0 3px 7px 0 rgba(0,0,0,0.38);
+    color: #FFF;
+    font-size: 17px;
+    left: 50%;
+    margin: 0 5px 0 0;
+    outline: 0;
+    padding: 4px 18px 17px;
+    position: fixed;
+    top: auto;
+    white-space: nowrap;
+    -webkit-transform: translate(-50%,0);
+    z-index: 998;
+}
+
+input[type="file"] {
+    display: none;
 }

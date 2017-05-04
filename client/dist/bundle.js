@@ -63,6 +63,8 @@
 	
 	var _axios2 = _interopRequireDefault(_axios);
 	
+	var _semanticUiReact = __webpack_require__(/*! semantic-ui-react */ 208);
+	
 	var _Footer = __webpack_require__(/*! ./components/Footer.jsx */ 207);
 	
 	var _Footer2 = _interopRequireDefault(_Footer);
@@ -142,7 +144,12 @@
 	          '\uCD5C\uCCA8\uB2E8 \uAE30\uC220\uC744 \uC789\uC5EC\uB86D\uAC8C \uC368\uBCF4\uC790'
 	        ),
 	        _react2.default.createElement(_ImageList2.default, null),
-	        _react2.default.createElement(_Footer2.default, null)
+	        _react2.default.createElement(_Footer2.default, null),
+	        _react2.default.createElement(
+	          'button',
+	          { id: 'result-btn' },
+	          '\uB098\uC758 \uC5F0\uAE30\uB294 \uBA87\uC810?'
+	        )
 	      );
 	    }
 	  }]);
@@ -65002,7 +65009,7 @@
 	
 	var _lodash2 = _interopRequireDefault(_lodash);
 	
-	var _ImageElement = __webpack_require__(/*! ./ImageElement.jsx */ 870);
+	var _ImageElement = __webpack_require__(/*! ./ImageElement.jsx */ 869);
 	
 	var _ImageElement2 = _interopRequireDefault(_ImageElement);
 	
@@ -65042,11 +65049,11 @@
 	              _react2.default.createElement(
 	                _semanticUiReact.Card.Group,
 	                { itemsPerRow: 2, doubling: true },
-	                _react2.default.createElement(_ImageElement2.default, null),
-	                _react2.default.createElement(_ImageElement2.default, null),
-	                _react2.default.createElement(_ImageElement2.default, null),
-	                _react2.default.createElement(_ImageElement2.default, null),
-	                _react2.default.createElement(_ImageElement2.default, null)
+	                _react2.default.createElement(_ImageElement2.default, { emotion: '\uBD84\uB178', description: '\uC0B4\uBA74\uC11C \uAC00\uC7A5 \uBE61\uCCE4\uB358 \uC21C\uAC04\uC744 \uB5A0\uC62C\uB824\uBCF4\uC138\uC694.' }),
+	                _react2.default.createElement(_ImageElement2.default, { emotion: '\uBD84\uB178' }),
+	                _react2.default.createElement(_ImageElement2.default, { emotion: '\uBD84\uB178' }),
+	                _react2.default.createElement(_ImageElement2.default, { emotion: '\uBD84\uB178' }),
+	                _react2.default.createElement(_ImageElement2.default, { emotion: '\uBD84\uB178' })
 	              )
 	            )
 	          )
@@ -82155,8 +82162,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(/*! ./../webpack/buildin/module.js */ 409)(module)))
 
 /***/ }),
-/* 869 */,
-/* 870 */
+/* 869 */
 /*!************************************************!*\
   !*** ./client/src/components/ImageElement.jsx ***!
   \************************************************/
@@ -82168,6 +82174,8 @@
 	  value: true
 	});
 	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
 	var _react = __webpack_require__(/*! react */ 1);
 	
 	var _react2 = _interopRequireDefault(_react);
@@ -82176,27 +82184,70 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var ImageElement = function ImageElement() {
-	  return _react2.default.createElement(
-	    _semanticUiReact.Card,
-	    null,
-	    _react2.default.createElement(_semanticUiReact.Image, { src: 'https://metnew.github.io/react-semantic.ui-starter/images/dummy.png' }),
-	    _react2.default.createElement(
-	      _semanticUiReact.Card.Content,
-	      null,
-	      _react2.default.createElement(
-	        _semanticUiReact.Card.Header,
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var ImageElement = function (_Component) {
+	  _inherits(ImageElement, _Component);
+	
+	  function ImageElement(props) {
+	    _classCallCheck(this, ImageElement);
+	
+	    var _this = _possibleConstructorReturn(this, (ImageElement.__proto__ || Object.getPrototypeOf(ImageElement)).call(this, props));
+	
+	    _this.state = {
+	      url: ''
+	    };
+	    _this.imangePreview = _this.imangePreview.bind(_this);
+	    return _this;
+	  }
+	
+	  _createClass(ImageElement, [{
+	    key: 'imangePreview',
+	    value: function imangePreview() {
+	      var oFReader = new FileReader();
+	      oFReader.readAsDataURL(document.getElementById("angry").files[0]);
+	      console.dir(document.getElementById("angry").files[0]);
+	      oFReader.onload = function (oFREvent) {
+	        document.getElementById("uploadPreview").src = oFREvent.target.result;
+	      };
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        _semanticUiReact.Card,
 	        null,
-	        '\uB2F9\uC2E0\uC758 \uC6C3\uB294 \uC5F0\uAE30 \uC810\uC218\uB294?'
-	      ),
-	      _react2.default.createElement(
-	        _semanticUiReact.Card.Description,
-	        null,
-	        '90\uC810 \uC785\uB2C8\uB2E4.'
-	      )
-	    )
-	  );
-	};
+	        _react2.default.createElement(_semanticUiReact.Image, { src: 'https://metnew.github.io/react-semantic.ui-starter/images/dummy.png', id: 'uploadPreview' }),
+	        _react2.default.createElement(
+	          _semanticUiReact.Card.Content,
+	          null,
+	          _react2.default.createElement(
+	            _semanticUiReact.Card.Header,
+	            null,
+	            this.props.emotion
+	          ),
+	          _react2.default.createElement(
+	            _semanticUiReact.Card.Description,
+	            null,
+	            this.props.description
+	          ),
+	          _react2.default.createElement(
+	            _semanticUiReact.Button,
+	            { as: 'label', htmlFor: 'angry', icon: true, color: 'red' },
+	            _react2.default.createElement(_semanticUiReact.Icon, { name: 'camera', size: 'large' })
+	          ),
+	          _react2.default.createElement('input', { type: 'file', accept: 'image/*', capture: 'camera', id: 'angry', onChange: this.imangePreview })
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return ImageElement;
+	}(_react.Component);
 	
 	exports.default = ImageElement;
 

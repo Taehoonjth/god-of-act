@@ -14,11 +14,11 @@ export default class ImageList extends Component {
           <Grid.Row centered>
             <Grid.Column width={16}>
                 <Card.Group itemsPerRow={2} doubling>
-                  <ImageElement />
-                  <ImageElement />
-                  <ImageElement />
-                  <ImageElement />
-                  <ImageElement />
+                  <ImageElement emotion="분노" description="살면서 가장 빡쳤던 순간을 떠올려보세요."/>
+                  <ImageElement emotion="분노"/>
+                  <ImageElement emotion="분노"/>
+                  <ImageElement emotion="분노"/>
+                  <ImageElement emotion="분노"/>
                 </Card.Group>
             </Grid.Column>
           </Grid.Row>
