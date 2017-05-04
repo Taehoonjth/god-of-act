@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import { Card, Icon, Image, Button } from 'semantic-ui-react'
+import upload from 'superagent/lib/client'
 
 export default class ImageElement extends Component {
   constructor(props) {
@@ -13,6 +14,12 @@ export default class ImageElement extends Component {
   imangePreview() {
     const emotion = this.props.emotion;
     var oFReader = new FileReader();
+    upload.post('/api/image')
+    .attach('theseNamesMustMatch', document.getElementById(emotion).files[0])
+    .end((err, res) => {
+      if (err) console.log('this is err', err);
+      console.log(res.text);
+    })
     oFReader.readAsDataURL(document.getElementById(emotion).files[0]);
     oFReader.onload = function (oFREvent) {
         document.getElementById(`${emotion}Image`).src = oFREvent.target.result;
