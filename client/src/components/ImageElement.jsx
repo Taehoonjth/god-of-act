@@ -11,25 +11,26 @@ export default class ImageElement extends Component {
   }
 
   imangePreview() {
+    const emotion = this.props.emotion;
     var oFReader = new FileReader();
-    oFReader.readAsDataURL(document.getElementById("angry").files[0]);
-    console.dir(document.getElementById("angry").files[0]);
+    oFReader.readAsDataURL(document.getElementById(emotion).files[0]);
     oFReader.onload = function (oFREvent) {
-        document.getElementById("uploadPreview").src = oFREvent.target.result;
+        document.getElementById(`${emotion}Image`).src = oFREvent.target.result;
     };
   }
 
   render () {
+    const emotion = this.props.emotion;
     return (
       <Card>
-        <Image src='https://metnew.github.io/react-semantic.ui-starter/images/dummy.png' id="uploadPreview"/>
+        <Image src='https://metnew.github.io/react-semantic.ui-starter/images/dummy.png' id={`${emotion}Image`}/>
         <Card.Content>
-          <Card.Header>{this.props.emotion}</Card.Header>
+          <Card.Header>{this.props.title}</Card.Header>
           <Card.Description>{this.props.description}</Card.Description>
-          <Button as="label" htmlFor="angry" icon color='red'>
+          <Button as="label" htmlFor={emotion} icon color='red'>
             <Icon name='camera' size="large"/>
           </Button>
-          <input type="file" accept="image/*" capture="camera" id="angry" onChange={this.imangePreview} />
+          <input type="file" accept="image/*" capture="camera" id={emotion} onChange={this.imangePreview} />
         </Card.Content>
       </Card>
     )
