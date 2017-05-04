@@ -143,6 +143,11 @@
 	          null,
 	          '\uCD5C\uCCA8\uB2E8 \uAE30\uC220\uC744 \uC789\uC5EC\uB86D\uAC8C \uC368\uBCF4\uC790'
 	        ),
+	        _react2.default.createElement(
+	          'h3',
+	          null,
+	          '\uC0AC\uC6A9\uBC29\uBC95: \uAC01 \uAC10\uC815\uC5D0 \uBAB0\uC785\uD55C \uB4A4 \uCE74\uBA54\uB77C \uBC84\uD2BC\uC744 \uB204\uB974\uACE0 \uC140\uCE74\uB97C \uCC0D\uB294\uB2E4. 6\uAC1C\uC758 \uBAA8\uB4E0 \uC140\uCE74\uB97C \uCC0D\uC5C8\uC73C\uBA74 \'\uB098\uC758 \uC5F0\uAE30\uB294 \uBA87\uC810\'\uBC84\uD2BC\uC744 \uB204\uB974\uACE0 \uACB0\uACFC\uB97C \uD655\uC778\uD55C\uB2E4.'
+	        ),
 	        _react2.default.createElement(_ImageList2.default, null),
 	        _react2.default.createElement(_Footer2.default, null),
 	        _react2.default.createElement(
@@ -65049,11 +65054,11 @@
 	              _react2.default.createElement(
 	                _semanticUiReact.Card.Group,
 	                { itemsPerRow: 2, doubling: true },
-	                _react2.default.createElement(_ImageElement2.default, { emotion: '\uBD84\uB178', description: '\uC0B4\uBA74\uC11C \uAC00\uC7A5 \uBE61\uCCE4\uB358 \uC21C\uAC04\uC744 \uB5A0\uC62C\uB824\uBCF4\uC138\uC694.' }),
-	                _react2.default.createElement(_ImageElement2.default, { emotion: '\uBD84\uB178' }),
-	                _react2.default.createElement(_ImageElement2.default, { emotion: '\uBD84\uB178' }),
-	                _react2.default.createElement(_ImageElement2.default, { emotion: '\uBD84\uB178' }),
-	                _react2.default.createElement(_ImageElement2.default, { emotion: '\uBD84\uB178' })
+	                _react2.default.createElement(_ImageElement2.default, { emotion: '\uBD84\uB178 : anger', description: '\uC0B4\uBA74\uC11C \uAC00\uC7A5 \uBE61\uCCE4\uB358 \uC21C\uAC04\uC744 \uB5A0\uC62C\uB824\uBCF4\uC138\uC694. ' }),
+	                _react2.default.createElement(_ImageElement2.default, { emotion: '\uC5ED\uACA8\uC6C0 : disgust' }),
+	                _react2.default.createElement(_ImageElement2.default, { emotion: '\uACF5\uD3EC : fear' }),
+	                _react2.default.createElement(_ImageElement2.default, { emotion: '\uD589\uBCF5 : happiness' }),
+	                _react2.default.createElement(_ImageElement2.default, { emotion: '\uB180\uB77C\uC6C0 : surprise' })
 	              )
 	            )
 	          )
