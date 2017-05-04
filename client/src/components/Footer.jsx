@@ -10,17 +10,20 @@ export default class Footer extends Component {
   render () {
     return (
       <footer>
-          <div className="footer-inner">
-              <Grid>
+        <div className="footer-inner">
+          <Grid>
             <Grid.Row>
               <Grid.Column width={12}>
-                <a href="https://github.com/Metnew/react-semantic.ui-starter">
+                <a href="https://github.com/Taehoonjth/god-of-act.git">
                   <Header as="h3" inverted>
                     <Icon name="github" />
                     <Header.Content>
-                      React-Semantic.UI-Start
+                      연기의 신
                       <Header.Subheader>
-                        Cash me on @Github howbow dah?
+                        Powered by Mircrosoft Emotion API
+                      </Header.Subheader>
+                      <Header.Subheader>
+                        ©2017 Taehoon Jung
                       </Header.Subheader>
                     </Header.Content>
                   </Header>
