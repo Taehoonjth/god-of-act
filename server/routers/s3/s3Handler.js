@@ -1,4 +1,5 @@
 const AWS = require('aws-sdk');
+const axios = require('axios');
 
 AWS.config.update(
   {
@@ -6,6 +7,10 @@ AWS.config.update(
     secretAccessKey: process.env.AWS_Secret_Access_Key,
     "region": 'us-west-1',
   });
+
+const axios_instance = axios.create({
+  headers: {'Ocp-Apim-Subscription-Key': process.env.MICROSOFT_Emotion_Key}
+});
 
 const s3 = new AWS.S3();
 
@@ -33,7 +38,22 @@ module.exports = function(req, res) {
         console.log('this is err from aws s3', err);
         return res.status(400).send(err);
       }
-      console.log('image upload is done');
-      res.send('https://s3-us-west-1.amazonaws.com/affluentsponges/' + filename);
+      console.log('image upload is done.');
+
+      axios_instance.post('https://westus.api.cognitive.microsoft.com/emotion/v1.0/recognize', {
+        "url": 'https://s3-us-west-1.amazonaws.com/affluentsponges/' + filename
+      })
+      .then(function (response) {
+        console.dir(response.data);
+        // res.send('https://s3-us-west-1.amazonaws.com/affluentsponges/' + filename);
+        res.json({
+          imageURL: 'https://s3-us-west-1.amazonaws.com/affluentsponges/' + filename,
+          emotionResult: response.data
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
   });
 }
