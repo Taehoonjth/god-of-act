@@ -23,7 +23,7 @@ export default class ImageElement extends Component {
     .end((err, res) => {
       if (err) console.log('this is err', err);
       console.dir(res.body);
-      var score = Math.floor(res.body.emotionResult[0].scores[_this.props.emotion] * 100).toString();
+      var score = (Math.floor(res.body.emotionResult[0].scores[_this.props.emotion] * 10000) / 100).toString();
       _this.setState({
         score: score,
         fetching: false
@@ -39,20 +39,17 @@ export default class ImageElement extends Component {
     const emotion = this.props.emotion;
     return (
       <Card>
-        <Image src='https://metnew.github.io/react-semantic.ui-starter/images/dummy.png' id={`${emotion}Image`}/>
+        <Image src={this.props.src} id={`${emotion}Image`}/>
         <Card.Content>
-          <Card.Header>{this.props.title}</Card.Header>
           {this.state.score? 
-            <Card.Header>{this.state.score}점 입니다.</Card.Header> : 
-            <Card.Description>
-              <Dimmer active={this.state.fetching}>
-                <Loader>표정 분석중..</Loader>
-              </Dimmer>
-            {this.props.description}
-            </Card.Description>
+            <Card.Header>{this.props.emotionKr} 연기는 {this.state.score}점 입니다.</Card.Header> : 
+            <Card.Header>{this.props.title}</Card.Header>
           }
-          <Button as="label" htmlFor={emotion} icon color='red'>
-            <Icon name='camera' size="large"/>
+          <Dimmer active={this.state.fetching}>
+            <Loader>표정 분석중..</Loader>
+          </Dimmer>
+          <Button as="label" htmlFor={emotion} basic circular icon color='black' size='large' id="camera-btn">
+            <Icon name='instagram' size="large"/>
           </Button>
           <input type="file" accept="image/*" capture="camera" id={emotion} onChange={this.imangePreview} />
         </Card.Content>

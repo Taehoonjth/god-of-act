@@ -47,3 +47,14 @@ footer {
 input[type="file"] {
     display: none;
 }
+
+#camera-btn {
+    margin-top: 10px;
+}
+
+.sevice-dis {
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-size: 21px !important;
+    font-weight: 100 !important;
+    line-height: 31.5px !important;
+}
