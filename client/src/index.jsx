@@ -56,7 +56,7 @@ class App extends React.Component {
         <h3>사용방법: 각 감정에 몰입한 뒤 카메라 버튼을 누르고 셀카를 찍는다. 6개의 모든 셀카를 찍었으면 '나의 연기는 몇점'버튼을 누르고 결과를 확인한다.</h3>
         <ImageList />
         <Footer />
-        <button id="result-btn">나의 연기는 몇점?</button>
+        <button id="result-btn">나의 연기 종합 평가 및 순위 보기</button>
       </div>
     )
   }
