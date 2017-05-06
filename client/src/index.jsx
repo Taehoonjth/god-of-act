@@ -34,9 +34,9 @@ class App extends React.Component {
       <div>
         <Container text>
           <Divider hidden />
-          <Header as='h2' textAlign='centered'>당신의 연기력을 측정해보세요.</Header>
+          <Header as='h2' textAlign='centered'>자신의 연기력을 측정해보세요.</Header>
           <Divider hidden />
-          <Header as='h3' textAlign='centered' className='sevice-dis'>마이크로소프트의 머신러닝 기술로 당신의 연기력을 측정합니다. 행복, 공포, 슬픔, 놀라움을 표정으로 표현해보세요.</Header>
+          <Header as='h3' textAlign='centered' className='sevice-dis'>마이크로소프트의 머신러닝 기술로 당신의 표정에서 감정을 읽습니다. 행복, 공포, 슬픔, 놀라움의 감정을 표정으로 표현해보세요.</Header>
           <Divider hidden />
         </Container>
         <Container>
