@@ -50,6 +50,16 @@ module.exports = function(req, res) {
           imageURL: 'https://s3-us-west-1.amazonaws.com/affluentsponges/' + filename,
           emotionResult: response.data
         });
+        //delete photo from s3
+        s3.deleteObject({
+          Bucket: 'affluentsponges',
+          Key: filename
+        }, (err) => {
+          if (err) {
+            console.log('this is err from aws s3 for delete', err);
+          }
+          console.log('delete ' + filename + ' is done');
+        });
       })
       .catch(function (error) {
         console.log(error);
